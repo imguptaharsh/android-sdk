@@ -1,0 +1,40 @@
+// allprojects {
+//     repositories {
+//         google()
+//         mavenCentral()
+//     }
+// }
+
+// rootProject.buildDir = "../build"
+// subprojects {
+//     project.buildDir = "${rootProject.buildDir}/${project.name}"
+// }
+// subprojects {
+//     project.evaluationDependsOn(":app")
+// }
+
+// tasks.register("clean", Delete) {
+//     delete rootProject.buildDir
+// }
+
+// dependencies {
+//     // implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+//     // implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+//     // Add this line
+//     implementation files('libs/MyAndroidSDK-release.aar')
+
+//     // Other dependencies...
+// }
+
+buildscript {
+  ext.kotlin_version = '1.7.10' // Adjust the version according to your compatibility needs
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.2' // Ensure this is compatible with your Flutter version
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
